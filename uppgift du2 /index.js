@@ -8,3 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const findCity = (cityName) => cities.find((city) => city.name.toLowerCase() === cityName.toLowerCase());
 
+  const calculateDistances = (cityId) =>
+    distances
+      .filter((d) => d.city1 === cityId || d.city2 === cityId)
+      .map((d) => {
+        const otherCityId = d.city1 === cityId ? d.city2 : d.city1;
+        return { cityId: otherCityId, distance: d.distance };
+
+
+
