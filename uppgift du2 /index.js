@@ -14,6 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
       .map((d) => {
         const otherCityId = d.city1 === cityId ? d.city2 : d.city1;
         return { cityId: otherCityId, distance: d.distance };
+      });
 
+      const renderCities = () => {
+        citiesContainer.innerHTML = "";
+        cities.forEach((city) => {
+          const cityDiv = document.createElement("div");
+          cityDiv.className = "cityBox";
+          cityDiv.textContent = city.name;
+          cityDiv.dataset.cityId = city.id;
+          citiesContainer.appendChild(cityDiv);
+        });
+      };
 
 
