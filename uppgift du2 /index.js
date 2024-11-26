@@ -6,3 +6,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const h2 = document.querySelector("h2");
   const h3 = document.querySelector("h3");
 
+  const findCity = (cityName) => cities.find((city) => city.name.toLowerCase() === cityName.toLowerCase());
+
