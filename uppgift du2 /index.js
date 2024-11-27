@@ -66,7 +66,24 @@ document.addEventListener("DOMContentLoaded", () => {
               (d.city1 === cityRow.id && d.city2 === cityCol.id) ||
               (d.city2 === cityRow.id && d.city1 === cityCol.id)
           );
+          cell.textContent = distance ? distance.distance : "N/A";
+    
+          cell.textContent = distance ? (distance.distance / 10).toFixed(0) : "N/A";
+          cell.classList.add("cell")
+        }
 
+        if (rowIndex % 2 === 1) {
+          cell.classList.add("even_row");
+        }  
+
+        if (colIndex % 2 === 1) {
+          cell.classList.add("even_col");
+        }
+
+        tableContainer.appendChild(cell);
+      });
+    });
+  };
           const updateUI = (targetCity, closest, furthest) => {
             h2.textContent = targetCity.name;
             h3.style.display = "block";
