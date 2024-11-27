@@ -43,4 +43,15 @@ document.addEventListener("DOMContentLoaded", () => {
           tableContainer.appendChild(cityHeader);
         });
 
+ cities.forEach((cityRow, rowIndex) => {
+  const rowHeader = document.createElement("div");
+  const rowHeaderCity = cityRow.name;
+  const rowHeaderCityId = cityRow.id;
+  rowHeader.textContent = `${rowHeaderCityId} ${rowHeaderCity}`;
+  rowHeader.style.fontWeight = "bold"; 
+  rowHeader.classList = "cell";
+  if (rowIndex % 2 === 1) {
+    rowHeader.classList.add("even_row");
+  }
+  tableContainer.appendChild(rowHeader);
 
