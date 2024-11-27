@@ -115,6 +115,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const cityName = prompt("Skriv namnet på en stad:");
     if (!cityName) return;
 
+    const targetCity = findCity(cityName);
+    if (!targetCity) {
+      handleNotFound(cityName);
+      return;
+    }
+
+    const distancesToCity = calculateDistances(targetCity.id);
+    const closest = distancesToCity.reduce((min, d) => (d.distance < min.distance ? d : min));
+    const furthest = distancesToCity.reduce((max, d) => (d.distance > max.distance ? d : max));
+
+    document.title = targetCity.name;
+    updateUI(targetCity, closest, furthest);
+  };
  
   renderCities();
   renderTable();
