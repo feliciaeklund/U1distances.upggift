@@ -101,5 +101,15 @@ document.addEventListener("DOMContentLoaded", () => {
             });
           };
         
+  
+  const handleNotFound = (cityName) => {
+    h2.textContent = cityName;
+    h3.textContent = "Staden finns inte i databasen";
+    h3.style.color = "red";
+    closestSpan.textContent = "";
+    furthestSpan.textContent = "";
+    document.title = "Not Found";
+  };
+
 
           
