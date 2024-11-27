@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   };
+
           const updateUI = (targetCity, closest, furthest) => {
             h2.textContent = targetCity.name;
             h3.style.display = "block";
