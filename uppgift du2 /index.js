@@ -55,3 +55,15 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   tableContainer.appendChild(rowHeader);
 
+      cities.forEach((cityCol, colIndex) => {
+        const cell = document.createElement("div");
+        if (cityRow.id === cityCol.id) {
+          cell.textContent = ""; 
+          cell.classList = "cell";
+        } else {
+          const distance = distances.find(
+            (d) =>
+              (d.city1 === cityRow.id && d.city2 === cityCol.id) ||
+              (d.city2 === cityRow.id && d.city1 === cityCol.id)
+          );
+
