@@ -84,4 +84,22 @@ document.addEventListener("DOMContentLoaded", () => {
         
             [targetDiv].forEach((div) => {
               div.classList = "cityBox target";
+            });            });
+
+            [closestDiv].forEach((div) => {
+              div.classList = "cityBox closest";
+              const cityName = cities[closest.cityId].name;
+              const distance = (closest.distance / 10).toFixed(0);
+              div.textContent = `${cityName} ligger ${distance} mil bort`;
             });
+        
+            [furthestDiv].forEach((div) => {
+              div.classList = "cityBox furthest";
+              const cityName = cities[furthest.cityId].name;
+              const distance = (furthest.distance / 10).toFixed(0); 
+              div.textContent = `${cityName} ligger ${distance} mil bort`;
+            });
+          };
+        
+
+          
