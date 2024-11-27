@@ -112,4 +112,9 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
 
+ 
+  renderCities();
+  renderTable();
+  handleCitySearch();
+});
           
