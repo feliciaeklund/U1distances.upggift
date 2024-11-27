@@ -42,8 +42,8 @@ document.addEventListener("DOMContentLoaded", () => {
           cityHeader.classList = "cell";
           tableContainer.appendChild(cityHeader);
         });
-
- cities.forEach((cityRow, rowIndex) => {
+        
+  cities.forEach((cityRow, rowIndex) => {
   const rowHeader = document.createElement("div");
   const rowHeaderCity = cityRow.name;
   const rowHeaderCityId = cityRow.id;
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
             [targetDiv].forEach((div) => {
               div.classList = "cityBox target";
-            });            });
+            });
 
             [closestDiv].forEach((div) => {
               div.classList = "cityBox closest";
@@ -100,7 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
               div.textContent = `${cityName} ligger ${distance} mil bort`;
             });
           };
-        
   
   const handleNotFound = (cityName) => {
     h2.textContent = cityName;
