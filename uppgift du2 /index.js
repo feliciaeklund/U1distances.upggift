@@ -26,5 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
           citiesContainer.appendChild(cityDiv);
         });
       };
+      const renderTable = () => {
+        tableContainer.innerHTML = "";
+    
 
 
