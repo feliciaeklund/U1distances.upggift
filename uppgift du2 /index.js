@@ -111,6 +111,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.title = "Not Found";
   };
 
+   const handleCitySearch = () => {
+    const cityName = prompt("Skriv namnet på en stad:");
+    if (!cityName) return;
 
  
   renderCities();
