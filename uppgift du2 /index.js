@@ -29,5 +29,18 @@ document.addEventListener("DOMContentLoaded", () => {
       const renderTable = () => {
         tableContainer.innerHTML = "";
     
+        const headerDiv = document.createElement("div");
+        headerDiv.textContent = ""; 
+        headerDiv.classList = "cell";
+        headerDiv.style.fontWeight = "bold"; 
+        tableContainer.appendChild(headerDiv);
+    
+        cities.forEach((city) => {
+          const cityHeader = document.createElement("div");
+          cityHeader.textContent = city.id; 
+          cityHeader.style.fontWeight = "bold"; 
+          cityHeader.classList = "cell";
+          tableContainer.appendChild(cityHeader);
+        });
 
 
