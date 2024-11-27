@@ -67,3 +67,21 @@ document.addEventListener("DOMContentLoaded", () => {
               (d.city2 === cityRow.id && d.city1 === cityCol.id)
           );
 
+          const updateUI = (targetCity, closest, furthest) => {
+            h2.textContent = targetCity.name;
+            h3.style.display = "block";
+            closestSpan.textContent = `${cities[closest.cityId].name} (${(closest.distance).toFixed(0)} mil)`;
+            furthestSpan.textContent = `${cities[furthest.cityId].name} (${(furthest.distance / 10).toFixed(0)} mil)`;
+        
+            document.querySelectorAll(".cityBox").forEach((cityDiv) => {
+              cityDiv.style.backgroundColor = "";
+              cityDiv.style.color = "";
+            });
+        
+            const targetDiv = document.querySelector(`[data-city-id="${targetCity.id}"]`);
+            const closestDiv = document.querySelector(`[data-city-id="${closest.cityId}"]`);
+            const furthestDiv = document.querySelector(`[data-city-id="${furthest.cityId}"]`);
+        
+            [targetDiv].forEach((div) => {
+              div.classList = "cityBox target";
+            });
